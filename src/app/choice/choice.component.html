@@ -1,0 +1,38 @@
+<div class="flexbox-parent">
+  <div layout="column" layout-align="center center" style="min-height: 500px">
+    <mat-card class="card" >
+      <mat-card-header>
+        <mat-icon mat-card-avatar>person</mat-icon>
+        <mat-card-title>Demandeur</mat-card-title>
+        <mat-card-subtitle>autre texte</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Je souhaite bénéficier de l'aide proposée par les donateurs (nourriture, vétements, aide financière, ...)
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="button-row">
+        <button mat-flat-button color="primary" routerLink="/connect/inneed" >J'ai déjà un compte</button>
+        <button mat-flat-button color="accent" routerLink="/subscribe/inneed" >Je m'inscris</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <br/>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>star</mat-icon>
+        <mat-card-title>Donateur</mat-card-title>
+        <mat-card-subtitle>autre texte</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Je souhaiterais participer à l'amélioration du quotidien des autres
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="button-row">
+        <button mat-flat-button color="primary" routerLink="/connect/helper" >J'ai déjà un compte</button>
+        <button mat-flat-button color="accent" routerLink="/subscribe/helper" >Je m'inscris</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

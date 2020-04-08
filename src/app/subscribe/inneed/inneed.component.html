@@ -1,0 +1,110 @@
+
+
+    <!--<mat-form-field appearance="outline" class="full-width">-->
+      <!--<mat-label>Email</mat-label>-->
+      <!--<input matInput required [formControl]="emailFormControl" [errorStateMatcher]="matcher" >-->
+      <!--&lt;!&ndash;<mat-hint>Errors appear instantly!</mat-hint>&ndash;&gt;-->
+      <!--&lt;!&ndash;<mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">&ndash;&gt;-->
+        <!--&lt;!&ndash;Please enter a valid email address&ndash;&gt;-->
+      <!--&lt;!&ndash;</mat-error>&ndash;&gt;-->
+      <!--&lt;!&ndash;<mat-error *ngIf="emailFormControl.hasError('required')">&ndash;&gt;-->
+        <!--&lt;!&ndash;Email is <strong>required</strong>&ndash;&gt;-->
+      <!--&lt;!&ndash;</mat-error>&ndash;&gt;-->
+    <!--</mat-form-field>-->
+
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="identityFormGroup" errorMessage="Champs obligatoires.">
+    <form [formGroup]="identityFormGroup" layout="column" layout-align="center center">
+      <ng-template matStepperIcon="edit">
+        <mat-icon>check</mat-icon>
+      </ng-template>
+      <ng-template matStepLabel>Identitié</ng-template>
+
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="identityCtrl" required/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="identityCtrl" required/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Nombre de personnes dans le foyer</mat-label>
+        <input matInput formControlName="identityCtrl" required/>
+      </mat-form-field>
+
+      <div>
+        <button mat-flat-button color="primary" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="adressFormGroup" errorMessage="Champs obligatoires.">
+    <form [formGroup]="adressFormGroup" layout="column" layout-align="center center">
+      <ng-template matStepperIcon="edit">
+        <mat-icon>check</mat-icon>
+      </ng-template>
+      <ng-template matStepLabel>Adresse</ng-template>
+
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Adresse</mat-label>
+        <input matInput formControlName="adressCtrl" required/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Complément d'adresse</mat-label>
+        <input matInput formControlName="adressCtrl"/>
+      </mat-form-field>
+      <table class="width-80" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Code postal</mat-label>
+              <input matInput formControlName="adressCtrl" required/>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Ville</mat-label>
+              <input matInput formControlName="adressCtrl" required/>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+      <div>
+        <button mat-flat-button color="default" matStepperPrevious>Précédent</button>
+        <button mat-flat-button color="primary" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="contactFormGroup" errorMessage="Champs obligatoires.">
+    <form [formGroup]="contactFormGroup" layout="column" layout-align="center center">
+      <ng-template matStepperIcon="edit">
+        <mat-icon>check</mat-icon>
+      </ng-template>
+      <ng-template matStepLabel>Contact</ng-template>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Téléphone</mat-label>
+        <input matInput formControlName="contactCtrl" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>E-mail</mat-label>
+        <input matInput formControlName="contactCtrl" required email>
+        <mat-error *ngIf="contactFormGroup.hasError('email')">
+        e-mail invalide
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="width-80">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="contactCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button (click)="stepper.reset()">Réinitialiser</button>
+        <button mat-button matStepperPrevious>Précédent</button>
+        <button mat-button color="primary" matStepperNext>Envoyer</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
+
+

@@ -18,6 +18,8 @@ import { ConnectHelperComponent } from './connect/helper/helper.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatStepperModule} from "@angular/material/stepper";
+import { CountriesComponent } from './utils/countries/countries.component';
+import {MatSelectModule} from "@angular/material/select";
 
 const appRoutes: Routes = [
   { path: '', redirectTo:'/choice', pathMatch: 'full' },
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     SubscribeHelperComponent,
     SubscribeInneedComponent,
     ConnectInneedComponent,
-    ConnectHelperComponent
+    ConnectHelperComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,8 @@ const appRoutes: Routes = [
     FormsModule,
     MatInputModule,
     MatStepperModule,
+    MatSelectModule,
+
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,

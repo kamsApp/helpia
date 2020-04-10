@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Indicatif</mat-label>
+  <mat-select [(ngModel)]="selectedCountry">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Rechercher</mat-label>
+      <input matInput (keyup)="searchCountries($event.target.value)">
+    </mat-form-field>
+    <mat-option *ngFor="let coutry of countries" [value]="coutry.alpha3Code">
+      <img class="mat-icon" src={{coutry.flag}} />
+      {{"(+" + coutry.callingCodes[0]+ ") " + coutry.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
